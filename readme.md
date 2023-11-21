@@ -6,9 +6,9 @@ Scaffolder of a React-User Interface
 
 ## Installation
 
-`npm install --save @fernsehturm/react-app`
+`npm install --save @fernsehturm/react-ui`
 
-The components to support a React web app and connect to its environment and other components.
+The components to support a React User Interface
 
 ## Development Guidelines
 
@@ -22,6 +22,6 @@ Babel for transpiling, `tsc` for types: https://www.typescriptlang.org/docs/hand
 Link library:
 
 1. in library: run `npm link`
-2. in project run `npm link @calliopa/core-webapp`
+2. in project run `npm link @calliopa/react-ui`
 
 see: https://sparkbox.com/foundry/test_project_changes_in_real_time_by_linking_your_component_library_and_project_with_npm_link
