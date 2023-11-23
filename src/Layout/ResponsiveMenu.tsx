@@ -108,6 +108,8 @@ export const createResponsiveMenu: ICreateResponsiveMenu = (
 
     const MenuLi = (props) => {
         const responsiveStyle = useResponsiveStyle();
+        const {childType, ...propsToPass} = props;
+
 
         return (
             <li
@@ -143,7 +145,7 @@ export const createResponsiveMenu: ICreateResponsiveMenu = (
                     }
                     // unfoldResponsiveUiData(GridUi.minWidthPixel, value => ({ minWidth: `${value}`}))
                 ])}
-                {...props}
+                {...propsToPass}
             >
                 {props.children}
             </li>

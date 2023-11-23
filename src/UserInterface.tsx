@@ -95,13 +95,16 @@ export const createUserInterface: ICreateUserInterface = ({
     ReactFela,
     Fela,
     FelaPresetWeb,
-    FelaMediaQueryMobileFirst
+    FelaMediaQueryMobileFirst,
+    PrimereactApi
 }) => {
     const renderer = Fela.createRenderer({
         plugins: FelaPresetWeb.plugins,
         // make sure to render the mobile queries first so that the desktop overrides them - if specified
         enhancers: [FelaMediaQueryMobileFirst()]
     });
+
+
 
     function UserInterface(props: IUserInterfaceProps): JSX.Element {
         const value = {};
@@ -112,7 +115,9 @@ export const createUserInterface: ICreateUserInterface = ({
                     props.renderer !== undefined ? props.renderer : renderer
                 }
             >
-                {props.children}
+                <PrimereactApi.PrimeReactProvider>
+                    {props.children}
+                </PrimereactApi.PrimeReactProvider>
             </ReactFela.RendererProvider>
         );
     }

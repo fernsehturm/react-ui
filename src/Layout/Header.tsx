@@ -11,7 +11,7 @@ export class CHeaderProps /* extends C_SINGLE_Props */ {
         | Array<React.ReactElement<any>>
         | string;
 
-    sticky: number = 0;
+    sticky?: boolean;
 
     $setRef?: any;
 }
@@ -85,12 +85,17 @@ export const createHeader: ICreateHeader = (
                              * the mobile values
                              */
                             padding: '10px 16px',
-                            // background: "#FFF1",
-                            color: '#f1f1f1',
+                            backgroundColor: 'var(--primary-color)',
+                            color: '#000',
                             display: 'flex',
-                            borderBottom: '2px dashed black',
-                            fontFamily: 'monospace, monospace',
+                            borderBottom: '2px solid black',
+                            //fontFamily: 'monospace, monospace',
                             fontSize: '1rem',
+
+                            
+                            "> *": {
+                                color: "black !important" //override the link default
+                            },
 
                             /**
                              * the tablet values
@@ -100,7 +105,7 @@ export const createHeader: ICreateHeader = (
                              * the desktop values
                              */
                             desktop: {},
-                            ...(props.sticky > 0
+                            ...(props.sticky 
                                 ? {
                                       position: 'fixed',
                                       top: 0,

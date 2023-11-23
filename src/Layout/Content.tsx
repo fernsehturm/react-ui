@@ -11,7 +11,7 @@ export class CContentProps /* extends C_SINGLE_Props */ {
         | Array<React.ReactElement<any>>
         | string;
 
-    sticky: number = 0;
+    sticky?: boolean = false;
 
     $setRef?: any;
 }
@@ -67,7 +67,7 @@ export const createContent: ICreateContent = (
     const Content: IContent = (props: IContentProps) => {
         const breakpoints = useBreakpoints();
         const { css } = ReactFela.useFela();
-        const { $setRef, ...propsToPass } = props;
+        const { $setRef, sticky, ...propsToPass } = props;
 
         return (
             <div
@@ -78,7 +78,7 @@ export const createContent: ICreateContent = (
                              * the mobile values
                              */
                             // padding: `calc(${props.sticky}px + 16px) 8px  16px  8px`,
-                            paddingTop: `calc(${props.sticky}px + 44px)`,
+                            paddingTop: props.sticky ? "44px" : "0px",
 
                             /**
                              * the tablet values

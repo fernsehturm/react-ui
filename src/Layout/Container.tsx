@@ -103,11 +103,8 @@ export const createContainer: ICreateContainer = (
                     return React.cloneElement(child, {
                         // sticky: window.pageYOffset > ref?.current?.offsetTop && window.pageYOffset > ref?.current.clientHeight ? ref?.current.clientHeight : 0,
                         // replaced the above because it does not work SSR, the latter makes more sense anyway
-                        sticky:
-                            offset > ref?.current?.offsetTop &&
-                            offset > ref?.current.clientHeight
-                                ? ref?.current.clientHeight
-                                : 0,
+                        // now using a boolean value
+                        sticky: offset > ref?.current?.offsetTop && offset > ref?.current.clientHeight, // ref?.current.clientHeight : 0, 
                         $setRef: setRef
                     });
                 })}

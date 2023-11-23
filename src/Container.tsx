@@ -52,14 +52,16 @@ export const filterContainerProps = (props) =>
  */
 type IContainer = (props: IContainerProps) => JSX.Element;
 
-type ICreateContainer = (props: ILibrary, useResponsiveStyle) => IContainer;
+type ICreateContainer = (props: ILibrary, useBreakpoints, useResponsiveStyle) => IContainer;
 
 export const createContainer: ICreateContainer = (
     { React, ReactHelmet, ReactRouterDom, ReactFela },
+    useBreakpoints,
     useResponsiveStyle
 ) => {
     const Container: IContainer = (props: IContainerProps) => {
         const responsiveStyle = useResponsiveStyle();
+        const breakpoints = useBreakpoints();
 
         return (
             <div
@@ -83,15 +85,16 @@ export const createContainer: ICreateContainer = (
                          * the tablet values
                          */
                         tablet: {
-                            margin: '0 auto 0 20em'
-                            // margin: "0 0.5em",
+                            // without a right-hand menu
+                            // margin: '0 auto 0 20em'
+                            margin: "0 auto",
                             // background: "lightblue",
                         },
                         /**
                          * the desktop values
                          */
                         desktop: {
-                            // width: `calc(${breakpoints.desktop}px - 4em)`,
+                            width: `calc(${breakpoints.desktop}px - 4em)`,
                             // background: "yellow",
                         }
                     }

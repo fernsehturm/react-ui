@@ -13,7 +13,11 @@ import * as ReactFela from "react-fela";
 import * as FelaPresetWeb from 'fela-preset-web';
 import FelaMediaQueryMobileFirst from 'fela-sort-media-query-mobile-first';
 import deepmerge from 'deepmerge';
+import * as PrimereactApi from 'primereact/api';
+import * as Formik from 'formik';
 
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
 
 /** Import the default export factory from our library */
 import createComponents, {
@@ -32,6 +36,12 @@ export default {
         ReactFela,
         FelaPresetWeb,
         FelaMediaQueryMobileFirst,
-        deepmerge
+        deepmerge,
+        PrimereactApi,
+        Formik,
+        PrimeReactElements: {
+            InputText: InputText,
+            Button: Button,
+        }
     })
 };

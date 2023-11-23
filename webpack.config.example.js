@@ -90,6 +90,10 @@ module.exports = {
                     }
                 }],
             },
+            {
+                test: /\.(scss|css)$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
             //loaders for other file types can go here
         ]
     },

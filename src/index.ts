@@ -15,6 +15,12 @@ import { createHeading } from './Heading';
 import { createGrid } from './Grid';
 import { createFloatingButton } from './FloatingButton';
 import { createResponsiveUi } from './ResponsiveUi';
+import { createLink } from './Link';
+import { createTextInput } from './Form/TextInput';
+import { createEmailSvg } from './svg/EmailSvg';
+import { createAsyncButton } from './Form/AsyncButton';
+import { createStack } from './Primitives/Stack';
+
 
 export type { ILibrary } from './Library';
 
@@ -33,11 +39,12 @@ export default (props: ILibrary) => {
         createResponsiveLayout(props);
 
     return {
-        Container: createContainer(props, useResponsiveStyle),
+        Container: createContainer(props, useBreakpoints, useResponsiveStyle),
         MenuToggle: createMenuToggle(props, useResponsiveStyle),
         OnlyMobile: createOnlyMobile(props, useResponsiveStyle),
         NotOnMobile: createNotOnMobile(props, useResponsiveStyle),
         Accordion: createAccordion(props, useResponsiveStyle),
+        Link: createLink(props, useResponsiveStyle),
         Modal: createModal(props, useResponsiveStyle),
         SearchBox: createSearchBox(props, useResponsiveStyle),
         Heading: createHeading(props, useResponsiveStyle),
@@ -46,6 +53,10 @@ export default (props: ILibrary) => {
         UserInterface: createUserInterface(props),
         Layout: createLayout(props, useBreakpoints, useResponsiveStyle),
         ResponsiveLayout,
+        Stack: createStack(props, useResponsiveStyle),
+        TextInput: createTextInput(props, useResponsiveStyle),
+        AsyncButton: createAsyncButton(props),
+        EmailSvg: createEmailSvg(props),
         unfoldResponsiveUiData: createResponsiveUi(props),
         useBreakpoints,
         useResponsiveStyle

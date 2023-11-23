@@ -18,6 +18,12 @@ export class CLibrary /* extends C_SINGLE_Props */ {
     FelaMediaQueryMobileFirst: any;
 
     deepmerge: any;
+
+    PrimereactApi: any;
+
+    Formik: any;
+
+    PrimeReactElements: any;
 }
 
 /**
