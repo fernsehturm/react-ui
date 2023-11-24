@@ -24,6 +24,12 @@ export class CLibrary /* extends C_SINGLE_Props */ {
     Formik: any;
 
     PrimeReactElements: any;
+
+    Slate: any;
+
+    SlateReact: any;
+
+    SlateHistory: any;
 }
 
 /**

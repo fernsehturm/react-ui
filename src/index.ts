@@ -17,7 +17,10 @@ import { createFloatingButton } from './FloatingButton';
 import { createResponsiveUi } from './ResponsiveUi';
 import { createLink } from './Link';
 import { createTextInput } from './Form/TextInput';
+import { createRichText } from './Form/RichText';
 import { createEmailSvg } from './svg/EmailSvg';
+import { createWorldSvg } from './svg/WorldSvg';
+import { createHeadlineSvg } from './svg/HeadlineSvg';
 import { createAsyncButton } from './Form/AsyncButton';
 import { createStack } from './Primitives/Stack';
 
@@ -55,8 +58,11 @@ export default (props: ILibrary) => {
         ResponsiveLayout,
         Stack: createStack(props, useResponsiveStyle),
         TextInput: createTextInput(props, useResponsiveStyle),
+        RichText: createRichText(props, useResponsiveStyle),
         AsyncButton: createAsyncButton(props),
         EmailSvg: createEmailSvg(props),
+        WorldSvg: createWorldSvg(props),
+        HeadlineSvg: createHeadlineSvg(props),
         unfoldResponsiveUiData: createResponsiveUi(props),
         useBreakpoints,
         useResponsiveStyle

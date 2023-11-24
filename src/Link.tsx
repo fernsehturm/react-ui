@@ -111,7 +111,7 @@ export const createLink: ICreateLink = ({ React, ReactRouterDom }, useResponsive
             //borderBottom: "2px dotted black",
             textDecoration: "none",
             color: 'var(--primary-color)',
-
+            margin: '0 0.5em',
             
             /**
              * the tablet values

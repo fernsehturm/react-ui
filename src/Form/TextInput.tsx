@@ -109,8 +109,7 @@ export const createTextInput: ICreateTextInput = ({ React, Formik, PrimeReactEle
     function TextInput(props: ITextInputProps): JSX.Element {
         
         const [field, meta] = Formik.useField(props);
-        return (
-            
+        return <div>
             <div className="p-inputgroup flex-1">
                 
                 { props.icon && <span className="p-inputgroup-addon">
@@ -120,12 +119,10 @@ export const createTextInput: ICreateTextInput = ({ React, Formik, PrimeReactEle
                 </span>}
                 
                 <PrimeReactElements.InputText {...field}  {...filterNonTextInputProps(props)}/>
-                {meta.touched && meta.error ? (
-                    <div className="error">{meta.error}</div>
-                ) : null}
+                
             </div>
-             
-        )
+            <div style={{color: "red", marginTop: "0px", height: "14px"}}><small>{ (meta.touched && meta.error) && meta.error }</small></div>
+        </div>
     };
 
     return TextInput;
