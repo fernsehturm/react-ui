@@ -121,6 +121,7 @@ export const createRichText: ICreateRichText = ({ React, ReactFela, Formik, Slat
 
         const [field, meta, helpers] = Formik.useField(props);
         
+        //console.log(field)
         const { staticStyle } = ReactFela.useFela();
 
         staticStyle({
@@ -135,9 +136,7 @@ export const createRichText: ICreateRichText = ({ React, ReactFela, Formik, Slat
 
         const { setValue } = helpers;
 
-        //console.log(field, meta, helpers);
-
-        const initialValue = [{
+        const initialValue = field?.value?.length > 0 ? field.value : [{
             type: "paragraph",
             children: [{ text: "" }],
             },
@@ -156,30 +155,7 @@ export const createRichText: ICreateRichText = ({ React, ReactFela, Formik, Slat
                 </SlateReact.Slate>
             </div>
         </div>
-/*
-        
 
-        const { value } = meta;
-        
-
-        React.useEffect(() => {
-            setValue([
-            {
-                type: "paragraph",
-                children: [{ text: "Type something ..." }],
-            },
-            ]);
-        }, []);
-  
-
-
-        return <div>
-            
-                
-            
-            </div>
-            <div style={{color: "red", marginTop: "0px", height: "14px"}}><small>{ (meta.touched && meta.error) && meta.error }</small></div>
-        </div>*/
     };
 
     return RichText;
