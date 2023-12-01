@@ -20,6 +20,7 @@ import { createTextInput } from './Form/TextInput';
 import { createRichText } from './Form/RichText';
 import { createEmailSvg } from './svg/EmailSvg';
 import { createWorldSvg } from './svg/WorldSvg';
+import { createUrlSvg } from './svg/UrlSvg';
 import { createHeadlineSvg } from './svg/HeadlineSvg';
 import { createAsyncButton } from './Form/AsyncButton';
 import { createStack } from './Primitives/Stack';
@@ -63,6 +64,7 @@ export default (props: ILibrary) => {
         EmailSvg: createEmailSvg(props),
         WorldSvg: createWorldSvg(props),
         HeadlineSvg: createHeadlineSvg(props),
+        UrlSvg: createUrlSvg(props),
         unfoldResponsiveUiData: createResponsiveUi(props),
         useBreakpoints,
         useResponsiveStyle

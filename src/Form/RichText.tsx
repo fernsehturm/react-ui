@@ -106,6 +106,11 @@ type IRichText<P> = React.FunctionComponent<P> & {
 
 export const createRichText: ICreateRichText = ({ React, ReactFela, Formik, Slate, SlateReact, SlateHistory }, useResponsiveStyle) => {
 
+    if (!Slate || !SlateReact || !SlateHistory) {
+        return function (props: IRichTextProps) {
+            return <div>Not implemented</div>
+        }
+    }
         
     const useEditor = () => {
 

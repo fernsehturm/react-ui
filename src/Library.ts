@@ -25,11 +25,11 @@ export class CLibrary /* extends C_SINGLE_Props */ {
 
     PrimeReactElements: any;
 
-    Slate: any;
+    Slate?: any;
 
-    SlateReact: any;
+    SlateReact?: any;
 
-    SlateHistory: any;
+    SlateHistory?: any;
 }
 
 /**

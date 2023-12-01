@@ -71,7 +71,7 @@ export const createHeader: ICreateHeader = (
             if (props.$setRef) {
                 props.$setRef(divElement);
             }
-        });
+        }, []);
 
         const { css } = ReactFela.useFela();
         const breakpoints = useBreakpoints();
