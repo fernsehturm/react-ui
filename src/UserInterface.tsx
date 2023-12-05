@@ -12,7 +12,7 @@ export class CUserInterfaceProps /* extends C_SINGLE_Props */ {
         | Array<React.ReactElement<any>>
         | string;
 
-    renderer?: any;
+    renderer?: any = null;
 }
 
 /**
